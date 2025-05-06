@@ -1,5 +1,9 @@
 ﻿# Hexagonal architecture (Ports and Adapters)
 
+<br />
+
+A small example of an application which allows to create and reschedule an appointment.
+
 <br/>
 
 The idea is to concentrate business logic in a **Core** project alongside with defined interfaces (ports). All communication goes through interfaces, **Core** is completely decoupled from any external systems. Interfaces define **what** to do and concrete implementations (**how** to do) provided through adapters.
