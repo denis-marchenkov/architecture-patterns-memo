@@ -1,6 +1,6 @@
 ﻿using Core.Ports;
 
-namespace ExtermalServices
+namespace ExternalServices
 {
     public class CalendarAdapter : ICalendarService
     {

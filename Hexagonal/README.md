@@ -10,13 +10,12 @@ Adapters are essentially other projects referencing Core and implementing interf
 
 <br/>
 
-Adapters don't reference each other and don't know about each other. However, we need a **Composition root** where dependency injection happens and that root will reference all adapters. 
+Adapters don't reference each other and don't know about each other. However, we need a **Composition root** where dependency injection happens and that root will reference all adapters.
 
 <br/>
 
-In real life scenario UI project could act as composition root. However UI itself is also an adapter which sounds like a contradiction to the general idea of Hexagonal architecture which to some extend true. However even though UI reference adapters it doesn't call them directly and only inject dependencies
+In real life scenario UI project could act as composition root. However UI itself is also an adapter which sounds like a contradiction to the general idea of Hexagonal architecture which to some extend true. However even though UI reference adapters it doesn't call them directly and only inject dependencies.
 
-<br />
 <br />
 
 ## Solution structure:
@@ -68,7 +67,7 @@ In real life scenario UI project could act as composition root. However UI itsel
 
 ## Project structure
 
-- **Core** - Contains domain entities, use cases, exceptions and ports (interfaces).
+- **Core** - Contains domain entities, use cases, business logic and ports (interfaces).
 - **ExternalServices** - external adapters like calendar service in this case.
 - **Persistence** - Persistence storage adapter implementation.
 - **WebApi** - HTTP Adapter, also contains composition root.
@@ -112,6 +111,6 @@ In this example composition root lives in WebApi adapter since it's also the ent
 
 <br />
 
-Notice how all interfaces (ports) defined in Core: for instance ```ICalendarService``` and ```IAppointmentRepository```. 
-However implementation for ```ICalendarService``` comes from ```ExernalServices``` project and implementation for ```IAppointmentRepository``` is in ```Persistence``` project. 
-This is the essence of Hexagonal architecture - Core doesn't know about any external systems and all communication goes through interfaces (ports).
+Notice how all interfaces (ports) defined in **Core**: for instance ```ICalendarService``` and ```IAppointmentRepository```.
+However implementation for ```ICalendarService``` comes from ```ExernalServices``` project and implementation for ```IAppointmentRepository``` is in ```Persistence``` project.
+This is the essence of Hexagonal architecture - **Core** doesn't know about any external systems and all communication goes through interfaces (ports).

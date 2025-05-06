@@ -12,11 +12,11 @@ Content-Type: application/json
 }
 ###
 
-PATCH {{WebApi_HostAddress}}/appointments/5853dabb-656b-4a07-a928-badbe1560dbe/reschedule
+PATCH {{WebApi_HostAddress}}/appointments/30695dc3-9be9-4066-856a-51f1a340a6af/reschedule
 Content-Type: application/json
 
 {
-  "id":"5853dabb-656b-4a07-a928-badbe1560dbe",
+  "id":"30695dc3-9be9-4066-856a-51f1a340a6af",
   "location": "Somewhere else",
   "newStartDate": "2025-04-06T10:00:00Z",
   "newEndDate": "2025-04-06T11:00:00Z"
