@@ -1,6 +1,6 @@
 ﻿using Core.Ports;
 using Core.UseCases;
-using ExtermalServices;
+using ExternalServices;
 using Persistence;
 
 namespace WebApi.Configuration
