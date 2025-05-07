@@ -27,10 +27,8 @@ namespace Core.Domain
         public static Appointment Create(string title, string location, DateTime startDate, DateTime endDate) => new(Guid.NewGuid(), title, location, startDate, endDate);
 
 
-        // method uses ICalendarService port to check if room is available for specified dates.
-        public void Reschedule(string location, DateTime newStartDate, DateTime newEndDate, ICalendarService calendarService)
+        public void Reschedule(string location, DateTime newStartDate, DateTime newEndDate)
         {
-            if (!calendarService.IsRoomAvailable(location, newStartDate, newEndDate)) throw new InvalidAppointmentException("Can't reschedule.");
             if (newStartDate >= newEndDate) throw new InvalidAppointmentException($"{nameof(newStartDate)} must be before {nameof(newEndDate)}.");
 
             Location = location;
