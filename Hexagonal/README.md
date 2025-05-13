@@ -82,16 +82,11 @@ In real life scenario UI project could act as composition root. However UI itsel
 
 ```mermaid
 graph TD
-    WebApi --> Core
-    Persistence --> Core
-    ExternalServices --> Core
-    WebApi --> Persistence
-    WebApi --> ExternalServices
-
-    style Core fill:#AFFFAF
-    style ExternalServices fill:#AFFFAF
-    style Persistence fill:#AFFFAF
-    style WebApi fill:#AFFFAF
+    WebApi -->|uses interfaces| Core
+    Persistence -->|implements| Core
+    ExternalServices -->|implements| Core
+    WebApi -->|DI wiring| Persistence
+    WebApi -->|DI wiring| ExternalServices
 ```
 
 <br />
