@@ -1,0 +1,23 @@
+@WebApi_HostAddress = http://localhost:5032
+
+POST {{WebApi_HostAddress}}/appointments
+Content-Type: application/json
+
+{
+  "title": "Test Appointment",
+  "location": "Somewhere",
+  "startDate": "2025-04-05T10:00:00Z",
+  "endDate": "2025-04-05T11:00:00Z"
+}
+###
+
+PATCH {{WebApi_HostAddress}}/appointments/49b0619a-4c91-4b30-bcec-2e8ac7bfad57/reschedule
+Content-Type: application/json
+
+{
+  "id": "49b0619a-4c91-4b30-bcec-2e8ac7bfad57",
+  "startDate": "2025-04-06T10:00:00Z",
+  "endDate": "2025-04-06T11:00:00Z",
+   "location": "Somewhere else"
+}
+###
