@@ -54,11 +54,11 @@ The application ring above it is **Application** ring containing use-cases, DTOs
 
 ## Project structure
 
-**Domain**          -   ring 0. Domain model.
-**DomainServices**  -   ring 1.Domain services - domain business logic coordinating domain entities.
-**Application**     -   ring 2. Use cases, DTOs.
-**Infrastructure**  -   ring 3. External services, repositories, etc.
-**WebApi**          -   ring 3. HTTP API.
+- **Domain**          -   ring 0. Domain model.
+- **DomainServices**  -   ring 1.Domain services - domain business logic coordinating domain entities.
+- **Application**     -   ring 2. Use cases, DTOs.
+- **Infrastructure**  -   ring 3. External services, repositories, etc.
+- **WebApi**          -   ring 3. HTTP API.
 
 <br />
 
@@ -66,6 +66,29 @@ The application ring above it is **Application** ring containing use-cases, DTOs
 
 ```mermaid
 graph TD
+
+    %% Innermost Ring (0) - Domain
+    subgraph ring0
+        Domain[Domain]
+    end
+
+    %% Ring 1 - Domain Services
+    subgraph ring1
+        DomainServices[Domain Services]
+    end
+
+    %% Ring 2 - Application
+    subgraph ring2
+        Application[Application]
+    end
+
+    %% Ring 3 - Infrastructure and Web API
+    subgraph ring3
+        WebApi[Web API]
+        Infrastructure[Infrastructure]
+    end
+
+    %% Dependencies
     DomainServices --> Domain
     Application --> DomainServices
     Infrastructure --> DomainServices
