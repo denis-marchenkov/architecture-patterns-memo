@@ -10,7 +10,7 @@ Quick reference for most popular architectural patterns
 
 <br />
 
-The general idea of applying architectural patterns is to achieve **maintainable** decoupled application with a distinct separation of concerns. 
+The general idea of applying architectural patterns is to achieve **maintainable** loosely coupled application with a distinct separation of concerns. 
 
 <br />
 
