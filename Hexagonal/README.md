@@ -6,7 +6,7 @@ A small example of an application which allows to create and reschedule an appoi
 
 <br/>
 
-The idea is to concentrate business logic in a **Core** project alongside with defined interfaces (ports). All communication goes through interfaces, **Core** is completely decoupled from any external systems. Interfaces define **what** to do and concrete implementations (**how** to do) provided through adapters.
+The idea is to concentrate business logic in a **Core** project alongside with defined interfaces (ports). All communication goes through interfaces, **Core** is completely decoupled from any external systems. Interfaces define **what** to do and concrete implementations (**how** to do) provided through adapters. In this particular example use cases are also reside in core even though it's not very DDD-compliant. A better approach in real life scenario would be add Application project and keep use cases, commands, handlers, DTOs there. Also this would be a step in the direction of Onion/Clean architecture and this example is simplified to represent Core project as a "hexagon".
 
 <br/>
 
